@@ -29,6 +29,7 @@ class Openexr < Formula
   end
 
   def install
+    ENV['CFLAGS']=ENV['CXXFLAGS']="-mmacosx-version-min=10.8 -march=nocona -mno-sse3 -mtune=generic"
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
