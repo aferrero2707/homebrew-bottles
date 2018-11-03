@@ -1,0 +1,18 @@
+language: generic
+
+os: osx
+osx_image: xcode9.4
+
+before_install:
+  - brew update
+  - brew reinstall --verbose --build-bottle Formula/ilmbase.rb
+  - brew bottle ilmbase
+  - ls
+  - wget -c https://github.com/aferrero2707/uploadtool/raw/master/upload_rotate.sh
+  - bash  ./upload_rotate.sh "continuous" ilmbase*bottle*.tgz >& /dev/null
+
+branches:
+  except:
+    - # Do not build tags that we create when we upload to GitHub Releases
+    - /^(?i:continuous)$/
+    - /^(?i:unstable)$/
