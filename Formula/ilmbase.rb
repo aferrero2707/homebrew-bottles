@@ -15,7 +15,7 @@ class Ilmbase < Formula
   def install
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
-    system "make", "install"
+    system "make", "V=1", "install"
     pkgshare.install %w[Half HalfTest Iex IexMath IexTest IlmThread Imath ImathTest]
   end
 
