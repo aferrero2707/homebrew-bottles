@@ -8,7 +8,7 @@ before_install:
   - bash ./build-openexr.sh
   - ls
   - wget -c https://github.com/aferrero2707/uploadtool/raw/master/upload_rotate.sh
-  - bash  ./upload_rotate.sh "continuous" *bottle*.tgz >& /dev/null
+  - bash  ./upload_rotate.sh "continuous" *bottle*.tar.gz >& /dev/null
 
 branches:
   except:
