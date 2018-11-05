@@ -19,22 +19,6 @@ class Libtiff < Formula
   depends_on "jpeg"
   depends_on "xz" => :optional
 
-  # All of these have been reported upstream & should
-  # be fixed in the next release, but please check.
-  patch do
-    url "https://mirrors.ocf.berkeley.edu/debian/pool/main/t/tiff/tiff_4.0.9-6.debian.tar.xz"
-    mirror "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/t/tiff/tiff_4.0.9-6.debian.tar.xz"
-    sha256 "4e145dcde596e0c406a9f482680f9ddd09bed61a0dc6d3ac7e4c77c8ae2dd383"
-    apply "patches/CVE-2017-9935.patch",
-          "patches/CVE-2017-18013.patch",
-          "patches/CVE-2018-5784.patch",
-          "patches/CVE-2017-11613_part1.patch",
-          "patches/CVE-2017-11613_part2.patch",
-          "patches/CVE-2018-7456.patch",
-          "patches/CVE-2017-17095.patch",
-          "patches/CVE-2018-8905.patch",
-          "patches/CVE-2018-10963.patch"
-  end
 
   def install
     ENV['CFLAGS']=ENV['CXXFLAGS']="-mmacosx-version-min=10.8 -march=nocona -mno-sse3 -mtune=generic"
