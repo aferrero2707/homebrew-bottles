@@ -27,7 +27,7 @@ class Libpng < Formula
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make"
-    system "make", "test"
+    #system "make", "test"
     system "make", "install"
   end
 
