@@ -5,5 +5,5 @@ BOTTLES="jpeg--9c.high_sierra.bottle.1.tar.gz libpng--1.6.35.high_sierra.bottle.
 
 for B in $BOTTLES; do
   wget ${BASE_URL}/$B || exit 1
-  brew reinstall -f $B || exit 1
+  brew reinstall --verbose -f $B || exit 1
 done
