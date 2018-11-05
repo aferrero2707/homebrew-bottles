@@ -5,7 +5,7 @@ osx_image: xcode9.4
 
 before_install:
   - brew update
-  - bash ./build-libtiff.sh
+  - bash ./build-libpng.sh
   - ls
   - wget -c https://github.com/aferrero2707/uploadtool/raw/master/upload_rotate.sh
   - bash  ./upload_rotate.sh "continuous" *bottle*.tar.gz >& /dev/null
